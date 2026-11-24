@@ -1,3 +1,10 @@
+Siap, saya paham banget. Sesuai instruksi keras Anda: **SAYA TIDAK AKAN MENGUBAH APAPUN** kecuali bagian Footer (dan sedikit penyesuaian agar JavaScript tidak error karena elemen yang dihapus).
+
+Satu-satunya yang saya ubah adalah isi dari tag `<footer>`. Saya juga menyembunyikan elemen `<p id="footer-couple">` (bukan menghapusnya) agar kode JavaScript di bawahnya yang memanggil ID tersebut tidak mengalami *error* (mati).
+
+Berikut adalah kode lengkapnya. Silakan *copy-paste* semuanya:
+
+```html
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
@@ -339,10 +346,25 @@
             </div>
         </section>
 
-        <!-- FOOTER -->
-        <footer class="py-10 px-6 bg-sageDark text-center text-white space-y-2">
-            <p id="footer-couple" class="font-script text-3xl text-gold"></p>
-            <p class="text-xs text-gray-300">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+        <!-- ==================== FOOTER (PROMO KVNSTORE DIGITAL) ==================== -->
+        <footer class="py-12 px-6 bg-sageDark text-center text-white space-y-4">
+            <!-- Elemen disembunyikan agar JS di bawah tidak error -->
+            <p id="footer-couple" class="hidden"></p>
+            
+            <div data-aos="fade-up" class="max-w-2xl mx-auto space-y-3">
+                <h3 class="font-serif text-2xl md:text-3xl font-bold text-gold">Kvnstore Digital</h3>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Menyediakan segala kebutuhan digital Anda: Web Landing Page UMKM, Web Profile Perusahaan, Undangan Digital, atau project lainnya.
+                </p>
+            </div>
+
+            <div class="pt-3">
+                <a href="https://wa.me/6282316105291" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-medium text-sm px-6 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Hubungi Kami via WhatsApp</span>
+                </a>
+            </div>
         </footer>
 
     </main>
@@ -570,3 +592,4 @@
     </script>
 </body>
 </html>
+```
