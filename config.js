@@ -1,14 +1,14 @@
 const DATA_UNDANGAN = {
     pengantin: {
-        namaPanggilanPria: "Ma'i",
-        namaLengkapPria: "Rahman syahri",
+        namaPanggilanPria: "laki laki",
+        namaLengkapPria: "laki laki",
         anakKePria: "Putra Pertama Dari",
-        ortuPria: "Bapaknya ma'i & Ibunya ma'i",
+        ortuPria: "Bapaknya laki & Ibunya laki",
 
-        namaPanggilanWanita: "Juliet",
-        namaLengkapWanita: "Juliet Capulet, S.E",
+        namaPanggilanWanita: "cewek",
+        namaLengkapWanita: "cewek",
         anakKeWanita: "Putri Kedua Dari",
-        ortuWanita: "Bapak Drs. Budi Capulet & Ibu Rina Marlina",
+        ortuWanita: "Bapak cewek & cewek",
 
         foto: "fotopengantin.png"
     },
@@ -29,8 +29,8 @@ const DATA_UNDANGAN = {
     },
 
     lokasi: {
-        koordinat: "1.272918,101.174144",
-        directMapUrl: "https://maps.app.goo.gl/4e3BjG2a5YFzBJ1z8?g_st=ac"
+        koordinat: "-0,2387977, 103,6365417",
+        directMapUrl: "https://maps.app.goo.gl/xqkieBE85yDDyZqCA?g_st=ac"
     },
 
     rekening: {
@@ -40,6 +40,6 @@ const DATA_UNDANGAN = {
     },
 
     whatsapp: {
-        nomorTujuan: "6289636624087"
+        nomorTujuan: "6282316105291"
     }
 };
