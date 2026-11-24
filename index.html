@@ -94,8 +94,8 @@
     <!-- Wadah Taburan Bunga -->
     <div id="petal-container"></div>
 
-    <!-- Audio Latar (letakkan file musik.mp3 di folder root sejajar dengan index.html) -->
-    <audio id="bg-music" src="musik.mp3" loop preload="auto"></audio>
+    <!-- Audio Latar (otomatis mendeteksi file .mp3 yang tersedia) -->
+    <audio id="bg-music" loop preload="auto"></audio>
 
     <!-- Tombol Kontrol Musik -->
     <button id="music-btn" onclick="toggleMusik()" aria-label="Putar atau jeda musik"
@@ -448,13 +448,47 @@
             }
         }
 
+        // Deteksi otomatis file berformat .mp3 yang tersedia di folder root
+        const daftarKandidatMp3 = [
+            'atlasaudio-instrumental-636501.mp3',
+            'musik.mp3',
+            'lagu.mp3',
+            'audio.mp3',
+            'song.mp3'
+        ];
+
+        async function cariFileMp3Tersedia() {
+            for (const namaFile of daftarKandidatMp3) {
+                if (!namaFile.toLowerCase().endsWith('.mp3')) continue;
+                try {
+                    const res = await fetch(namaFile, { method: 'HEAD', cache: 'no-store' });
+                    if (res.ok) {
+                        const tipe = (res.headers.get('content-type') || '').toLowerCase();
+                        if (!tipe.includes('text/html')) {
+                            return namaFile;
+                        }
+                    }
+                } catch (_) {}
+            }
+            return daftarKandidatMp3[0];
+        }
+
+        let sumberMp3Siap = cariFileMp3Tersedia().then((fileMp3) => {
+            const audio = document.getElementById('bg-music');
+            audio.src = fileMp3;
+            audio.load();
+            return fileMp3;
+        });
+
         // Kontrol musik
-        function putarMusik() {
+        async function putarMusik() {
             const audio = document.getElementById('bg-music');
             const btn = document.getElementById('music-btn');
             const icon = document.getElementById('music-icon');
 
             btn.classList.remove('hidden');
+            await sumberMp3Siap;
+
             audio.play().then(() => {
                 icon.className = 'fa-solid fa-volume-high text-sm';
             }).catch(() => {
