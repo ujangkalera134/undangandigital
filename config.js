@@ -29,7 +29,7 @@ const DATA_UNDANGAN = {
     },
 
     lokasi: {
-        koordinat: "-0,2387977, 103,6365417",
+        koordinat: "-0.2387977,103.6365417",
         directMapUrl: "https://maps.app.goo.gl/xqkieBE85yDDyZqCA?g_st=ac"
     },
 
